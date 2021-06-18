@@ -1,0 +1,25 @@
+apply plugin: "org.sonarqube"
+
+sonarqube {
+    properties {
+        property "sonar.host.url", "http://localhost:9000/"
+        property "sonar.projectKey", "android-sample-app"
+        property "sonar.projectName", "android-sample-app"
+        property "sonar.login", "44d5e5eb5d0831b72568b01bab263a7c4c1a631d"
+        property "sonar.tests", "src/test/java"
+        property "sonar.test.inclusions", "**/*Test*/**"
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.sources", "src/main/java"
+        property "sonar.exclusions", '**/*Test*/**,' +
+                'build/**' +
+                '*.json,' +
+                '**/*test*/**,' +
+                '**/.gradle/**,' +
+                '**/R.class'
+        property "sonar.java.coveragePlugin", "jacoco"
+        property "sonar.junit.reportPaths", "**/test-results/**/*.xml"
+        property "sonar.jacoco.reportPaths","C:/Users/shwetakhai/Desktop/Github_gradle/android-sample-app/app/build/jacoco/testDebugUnitTest.exec"
+        property "sonar.coverage.exclusions", "${coverageExclusions.join(', ')}"
+    }
+}
+//C:\Users\shwetakhai\Desktop\Github_gradle\android-sample-app\app\build\reports\jacocoTestReport
